@@ -1,1 +1,2 @@
 memory write 0x100000d66 0 #correction du count = 0 ligne 15
+memory write 0x100000ed1 8d #correction comparaison average
