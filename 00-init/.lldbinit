@@ -1,1 +1,2 @@
-settings set prompt "(testif) "
+settings set prompt "(adespond) "
+settings set target.x86-disassembly-flavor intel
