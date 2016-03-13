@@ -4,13 +4,18 @@ import os.path
 def import_conf(debugger, command, result, internal_dict):
     s = str(debugger.GetSelectedTarget()) + ".config"
     if os.path.isfile(s):
-        debugger.HandleCommand("command source " + s)
-        return
+		with open(s) as f:
+			for line in f:
+				line = str(line).rstrip('\n')
+				if not line == "continue":
+					debugger.HandleCommand(line)
+		return
     if os.path.isfile("commandes"):
 		with open("commandes") as f:
 			for line in f:
-				print line
-				debugger.HandleCommand(str(line))
+				line = str(line).rstrip('\n')
+				if not line == "continue":
+					debugger.HandleCommand(line)
 		return
 
 def __lldb_init_module(debugger, dict):
