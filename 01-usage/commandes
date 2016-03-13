@@ -2,4 +2,5 @@ memory write 0x100000d66 0 #correction du count = 0 ligne 15
 memory write 0x100000ed1 8d #correction comparaison average
 breakpoint set -a 0x100000d53 -c '!(count == 0 ? tab[0] = tab[1]: count == 1 ? tab[2] = tab[1] : tab[1] = tab[1])'
 breakpoint set -a 0x100000ef8 -c '!(tmp = min[0] + min[1] + min[2])'
+breakpoint set -a 0x100000f77 -c '!(min[0] > min[1] ? min[0] > min[2] ? biggest = min[0] : biggest = min[2] : min[1] > min[2] ? biggest = min[1] : biggest = min[2])' #correction max
 c
