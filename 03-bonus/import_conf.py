@@ -1,3 +1,4 @@
+import fileinput
 import lldb
 import os.path
 
@@ -8,9 +9,11 @@ def import_conf(debugger, command, result, internal_dict):
         debugger.HandleCommand("command source " + s);
         return
     if os.path.isfile("commandes"):
-        debugger.HandleCommand('script print "\033[32m[Loading \"commandes\"]\033[0m"')
+        debugger.HandleCommand('script print "\033[32m[Loading commandes]\033[0m"')
         debugger.HandleCommand("command source commandes");
+        debugger.HandleCommand('script print "\033[32m[Loading commandes]\033[0m"')
         return
 
 def __lldb_init_module(debugger, dict):
+    debugger.HandleCommand('script print "\033[32m[IMPORT_CONF COMMAND IMPORT]\033[0m"')
     debugger.HandleCommand('command script add -f import_conf.import_conf import -h "This command detect a <file>.config file or commandes file and execute its commands');

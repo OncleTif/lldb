@@ -1,4 +1,2 @@
-script print "\033[32m[INIT COMMAND IMPORT]\033[0m"
 command script import init.py
-script print "\033[32m[IMPORT_CONF COMMAND IMPORT]\033[0m"
 command script import import_conf.py
