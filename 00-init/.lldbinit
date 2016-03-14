@@ -1,3 +1,4 @@
+settings set prompt "(adespond) "
 settings set target.x86-disassembly-flavor intel
 script print "\033[32m      ade        spondad     dadespondad      ades  n  despondade      despon   espon   espond  esponda"
 script print "     dades       spondades   dadespondade   ndadespond  espondades    adespond  espon   espond  espondade"
